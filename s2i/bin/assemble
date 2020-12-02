@@ -46,12 +46,12 @@ fi
 
 if [[ -f requirements.txt ]]; then
   echo "---> Installing dependencies ..."
-  pip install -r requirements.txt
+  pip install --no-deps -r requirements.txt
 fi
 
 if [[ -f setup.py && -z "$DISABLE_SETUP_PY_PROCESSING" ]]; then
   echo "---> Installing application ..."
-  pip install .
+  pip install --no-deps .
 fi
 
 # set permissions for any installed artifacts
